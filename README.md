@@ -31,11 +31,13 @@ use bulleted lists and images of DataFrames as support and address following que
  - Revised School Summary ordered by descending % Overall Passing results (displaying top five schools)
  - ![Revised Top School Summary](Resources/Revised_top_school_summary.png)
 
-- How does replacing the ninth graders' math and reading scores affect THS performance relative to the other schools. When replacing the ninth grade math scores with NaN, the average math score for Thomas High School (THS) decreases from 83.42 to 83.35.  THS now falls in line with Griffin and Shelton High School's math scores, which were 83.35 and 83.36 respectively.  In regards to the Average Reading Score for THS, the score had a nominal increase from 83.8 to 83.9.  Interestingly, while the average reading score did increase, the % passing reading fell from 97.31% to 97.02%.  Yet, THS still has one of the highest average reading scores amongst the other schools.  Only 4 other schools had higher reading scores: Cabrera High School, Pena High School, Wilson High School and Wright High School.
+- How does replacing the ninth graders' math and reading scores affect THS performance relative to the other schools. When replacing the ninth grade math scores with NaN, the average math score for Thomas High School (THS) decreases from 83.42 to 83.35.  THS now falls in line with Griffin and Shelton High School's math scores, which were 83.35 and 83.36 respectively.  In regards to the Average Reading Score for THS, the score had a nominal increase from 83.8 to 83.9.  Interestingly, while the average reading score did increase, the % passing reading fell from 97.31% to 97.02%.  Yet, THS still has one of the highest average reading scores amongst the other schools.  Only 4 other schools had higher reading scores: Cabrera High School, Pena High School, Wilson High School and Wright High School.  
 
 
-- How does replacing the ninth grade scores affect the following:
- - Math and reading scores by grade
+- In addition to revising the district and school summaries, the following was also reviewed for impact when removing ninth grade scores at Thomas High School:
+ - Math and reading scores by grade were not impacted.  Ninth grade scores at Thomas High School reflected "Nan" but all other scores remained stable as seen in the below screenshots.
+  - Original Math Scores by Grade vs. Revised Math Scores by Grade
+  ![Original scores by grade](Resources/Original_scores_by_grade.png)    ![revised math scores by grade](Resources/revised_math_scores_by_grade.png)
  - scores by school spending
  - scores by school size
  - scores by school type
