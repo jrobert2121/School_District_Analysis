@@ -35,13 +35,26 @@ use bulleted lists and images of DataFrames as support and address following que
 
 
 - In addition to revising the district and school summaries, the following was also reviewed for impact when removing ninth grade scores at Thomas High School:
- - Math and reading scores by grade were not impacted.  Ninth grade scores at Thomas High School reflected "Nan" but all other scores remained stable as seen in the below screenshots.
+ - Math and reading scores by grade were not impacted.  Ninth grade scores at Thomas High School reflected "nan" but all other scores remained stable as seen in the below screenshots.
   - Original Math Scores by Grade vs. Revised Math Scores by Grade
-  
+
   ![Original scores by grade](Resources/Original_scores_by_grade.png)    ![revised math scores by grade](Resources/revised_math_scores_by_grade.png)
- - scores by school spending
- - scores by school size
- - scores by school type
+
+  - Original Reading Scores by Grade vs. Revised Reading Scores by Grade
+
+  ![Original reading scores by grade](Resources/Original_reading_scores_by_grade.png)     ![revised reading scores by grade](Resources/revised_reading_scores_by_grade.png)
+
+ - In the original analysis performed, schools with the highest level of spending per student were in fact the lowest in the % Overall Passing.  In fact it the highest performing schools in the % Overall Passing were those in lowest spending range of "< $584".  This was observed not only in % Overall Passing but in all categories across the board.  The lowest funded schools had the best performance.  This did not change upon removal of the ninth grade scores from Thomas High School.  The findings remained the same in the revised analysis.
+
+  - ![revised school spending](Resources/revised_school_spending.png)
+
+ - Next performance was categorized by the size of the school.  Three categories were used: small, medium, and large.  It is noted that the medium sized schools had the overall best passing percentage.  Small schools performed similar to the the medium schools but the large schools greatly underperformed by comparision across the board.  This did not change upon the removal of the ninth grade scores.
+
+ ![original school size](Resources/original_school_size.png)
+
+ - When looking at performance based on the type of school, charter vs district, there was no change upon removing ninth grade scores.  It remains that Charter schools continue to outperform the District schools across the board.
+
+ ![revised school type](Resources/revised_school_type.png)
 
 ## Summary
 
