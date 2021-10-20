@@ -15,10 +15,11 @@ Determine the effects on the school district when removing ninth grade scores fr
 The analysis was completed using the pandas and numpy dependencies.  After an initial review of the data sources, it was determined that cleaning the student data was in order to remove any prefixes or suffixes in the student name before proceeding further.  Then with clean student data, the student dataframe was then able to be modified to replace ninth grade math and reading scores at Thomas High School with "nan". This was accomplished by employing the loc function to select all ninth grade math and reading scores to be replaced with "nan".
 
 ```
-student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan
+student_data_df.loc[(student_data_df["school_name"] == "Thomas High School")
+                    & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan
 
-student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "math_score"] = np.nan
-
+student_data_df.loc[(student_data_df["school_name"] == "Thomas High School")
+                    & (student_data_df["grade"] == "9th"), "math_score"] = np.nan
 ```
 ![revised student data df](Resources/revised_student_data_df.png)
 
@@ -27,8 +28,9 @@ Next it was necessary to revise the District summary.  To begin, a new student c
 ```
 # Step 1. Get the number of students that are in ninth grade at Thomas High School.
 # These students have no grades. 
-thomas_ninth_graders = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") 
-                                                   & (school_data_complete_df["grade"] == "9th"), "Student ID"].count()
+thomas_ninth_graders = school_data_complete_df.loc[
+    (school_data_complete_df["school_name"] == "Thomas High School") 
+    & (school_data_complete_df["grade"] == "9th"), "Student ID"].count()
 # Get the total student count 
 student_count = school_data_complete_df["Student ID"].count()
 
@@ -66,13 +68,17 @@ Next in order to update the School Summary dataframe, it was necessary to recalc
 ths_tenth_to_twelfth_count = per_school_summary_df.loc["Thomas High School", "Total Students"] - thomas_ninth_graders
 
 # Step 6. Get all the students passing math from THS
-ths_passing_math = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["math_score"] >= 70)]
+ths_passing_math = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School")
+                                               & (school_data_complete_df["math_score"] >= 70)]
 
 # Step 7. Get all the students passing reading from THS
-ths_passing_reading = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["reading_score"] >= 70)]
+ths_passing_reading = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School")
+                                                  & (school_data_complete_df["reading_score"] >= 70)]
 
 # Step 8. Get all the students passing math and reading from THS
-ths_passing_math_reading = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["math_score"] >= 70) & (school_data_complete_df["reading_score"] >= 70)]
+ths_passing_math_reading = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School")
+                                                       & (school_data_complete_df["math_score"] >= 70)
+                                                       & (school_data_complete_df["reading_score"] >= 70)]
 
 # Step 9. Calculate the percentage of 10th-12th grade students passing math from Thomas High School. 
 percentage_ths_passing_math = (ths_passing_math.count()["student_name"] / ths_tenth_to_twelfth_count) * 100
@@ -124,21 +130,21 @@ Revised School Summary ordered by descending % Overall Passing results (displayi
 
   ![Original scores by grade](Resources/Original_scores_by_grade.png)    ![revised math scores by grade](Resources/revised_math_scores_by_grade.png)
 
-   Original Reading Scores by Grade vs. Revised Reading Scores by Grade
+  Original Reading Scores by Grade vs. Revised Reading Scores by Grade
 
   ![Original reading scores by grade](Resources/Original_reading_scores_by_grade.png)     ![revised reading scores by grade](Resources/revised_reading_scores_by_grade.png)
 
    - In the original analysis performed, schools with the highest level of spending per student were in fact the lowest in the % Overall Passing.  In fact it the highest performing schools in the % Overall Passing were those in lowest spending range of "< $584".  This was observed not only in % Overall Passing but in all categories across the board.  The lowest funded schools had the best performance.  This did not change upon removal of the ninth grade scores from Thomas High School.  The findings remained the same in the revised analysis.
 
-  ![revised school spending](Resources/revised_school_spending.png)
+   ![revised school spending](Resources/revised_school_spending.png)
 
    - Next performance was categorized by the size of the school.  Three categories were used: small, medium, and large.  It is noted that the medium sized schools had the overall best passing percentage.  Small schools performed similar to the the medium schools but the large schools greatly underperformed by comparision across the board.  This did not change upon the removal of the ninth grade scores.
 
- ![original school size](Resources/original_school_size.png)
+   ![original school size](Resources/original_school_size.png)
 
    - When looking at performance based on the type of school, charter vs district, there was no change upon removing ninth grade scores.  It remains that Charter schools continue to outperform the District schools across the board.
 
- ![revised school type](Resources/revised_school_type.png)
+   ![revised school type](Resources/revised_school_type.png)
 
 ## Summary
 
