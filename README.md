@@ -37,6 +37,7 @@ use bulleted lists and images of DataFrames as support and address following que
 - In addition to revising the district and school summaries, the following was also reviewed for impact when removing ninth grade scores at Thomas High School:
  - Math and reading scores by grade were not impacted.  Ninth grade scores at Thomas High School reflected "Nan" but all other scores remained stable as seen in the below screenshots.
   - Original Math Scores by Grade vs. Revised Math Scores by Grade
+  
   ![Original scores by grade](Resources/Original_scores_by_grade.png)    ![revised math scores by grade](Resources/revised_math_scores_by_grade.png)
  - scores by school spending
  - scores by school size
